@@ -1,21 +1,24 @@
-###############µÚÆßÕÂ###################
+###############ç¬¬ä¸ƒç« ###################
+#######################################
+#ç¬¬ä¸ƒç« å†…å®¹ä¸»è®²æ³¨é‡Šçš„ä½¿ç”¨ï¼ˆæ–‡æœ¬å’Œå›¾å½¢ï¼‰#
+#######################################
 rm(list = ls())
 library(ggplot2)
-#Ìí¼ÓÎÄ±¾×¢½â
+#æ·»åŠ æ–‡æœ¬æ³¨è§£
 data<-faithful
 View(data)
 p<-ggplot(data,aes(x=eruptions,y=waiting))+geom_point()
 p+annotate("text",x=3,y=48,label="Group1",family="serif",fontface="italic",col="red")+
-  annotate("text",x=4.5,y=66,label="Group2",family="serif",fontface="italic",col="red")#"text"¼¸ºÎ¶ÔÏó£¬family×ÖÌå£¬fontfaceÀýÈçÐ±Ìå
-#±ê×¢µÄÎ»ÖÃÈ·¶¨
+  annotate("text",x=4.5,y=66,label="Group2",family="serif",fontface="italic",col="red")#"text"å‡ ä½•å¯¹è±¡ï¼Œfamilyå­—ä½“ï¼Œfontfaceä¾‹å¦‚æ–œä½“
+#æ ‡æ³¨çš„ä½ç½®ç¡®å®š
 p<-ggplot(data,aes(x=eruptions,y=waiting))+geom_point()
 p+annotate("text",x=-Inf,y=Inf,label="Uper name",family="serif",fontface="italic",col="red",hjust=-0.2,vjust=2)+
-  annotate("text",x=mean(range(data$eruptions)),y=-Inf,label="down name",family="serif",fontface="italic",col="red",vjust=-2)#"text"¼¸ºÎ¶ÔÏó£¬family×ÖÌå£¬fontfaceÀýÈçÐ±Ìå
-#×¢½âÊ¹ÓÃÊýÑ§±í´ïÊ½
+  annotate("text",x=mean(range(data$eruptions)),y=-Inf,label="down name",family="serif",fontface="italic",col="red",vjust=-2)#"text"å‡ ä½•å¯¹è±¡ï¼Œfamilyå­—ä½“ï¼Œfontfaceä¾‹å¦‚æ–œä½“
+#æ³¨è§£ä½¿ç”¨æ•°å­¦è¡¨è¾¾å¼
 p<-ggplot(data.frame(x=c(-3,3)),aes(x=x))+stat_function(fun = dnorm)
-p+annotate("text",parse=TRUE,x=2,y=0.3,label="frac(1,sqrt(2*pi))*e^{-x^2/2}")#¹«Ê½Ìí¼Ó·½Ê½Ò»
-p+annotate("text",parse=TRUE,x=2,y=0.3,label="'Function:'*y==frac(1,sqrt(2*pi))*e^{-x^2/2}")#¹«Ê½Ìí¼Ó·½Ê½¶þ
-#Ìí¼ÓÖ±Ïß
+p+annotate("text",parse=TRUE,x=2,y=0.3,label="frac(1,sqrt(2*pi))*e^{-x^2/2}")#å…¬å¼æ·»åŠ æ–¹å¼ä¸€
+p+annotate("text",parse=TRUE,x=2,y=0.3,label="'Function:'*y==frac(1,sqrt(2*pi))*e^{-x^2/2}")#å…¬å¼æ·»åŠ æ–¹å¼äºŒ
+#æ·»åŠ ç›´çº¿
 library(gcookbook)
 data<-heightweight
 View(data)
